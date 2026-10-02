@@ -48,6 +48,26 @@
     padding:36px 28px 60px;
   }
 
+  .page-nav{
+    margin-bottom:12px;
+  }
+  .home-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 12px;
+    border:1.5px solid var(--blue);
+    border-radius:6px;
+    background:var(--blue-bg);
+    color:var(--ink);
+    font-size:0.92rem;
+    font-weight:700;
+    text-decoration:none;
+    transition:transform 160ms ease;
+  }
+  .home-link:hover{ transform:translateY(-1px); }
+  .home-link:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; }
+
   /* ===== Header ===== */
   header{
     text-align:center;
@@ -254,6 +274,10 @@
 </head>
 <body>
 <div class="sheet">
+
+  <nav class="page-nav" aria-label="Navegação da página">
+    <a class="home-link" href="index.html"><span aria-hidden="true">←</span> Voltar ao índice</a>
+  </nav>
 
   <header>
     <span class="kicker">— resumo atualizado —</span>
