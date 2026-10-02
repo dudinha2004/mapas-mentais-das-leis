@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lei nº 8.429/1992 — Mapa de Estudo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF7EE;
+    --ink:#233248;
+    --ink-soft:#4A5568;
+    --lilac:#8E7CC3;
+    --lilac-bg:#EEE9F8;
+    --blue:#4C86A8;
+    --blue-bg:#E4F0F5;
+    --green:#5E9E6E;
+    --green-bg:#E7F3E8;
+    --orange:#D68A3C;
+    --orange-bg:#FBEDDA;
+    --pink:#C2588A;
+    --pink-bg:#FBE7F0;
+    --teal:#3F9C93;
+    --teal-bg:#E2F4F1;
+    --rose:#C0644B;
+    --rose-bg:#FAE6E0;
+    --gold:#B79126;
+    --gold-bg:#F8F1DA;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(35,50,72,0.06) 1px, transparent 0);
+    background-size:22px 22px;
+    color:var(--ink);
+    font-family:'Kalam', cursive;
+    line-height:1.5;
+  }
+
+  .sheet{
+    max-width:960px;
+    margin:0 auto;
+    padding:36px 28px 60px;
+  }
+
+  header{
+    text-align:center;
+    margin-bottom:30px;
+  }
+  .kicker{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--rose);
+    transform:rotate(-1deg);
+    display:inline-block;
+  }
+  h1{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:3.4rem;
+    margin:2px 0 6px;
+    color:var(--ink);
+    letter-spacing:1px;
+  }
+  .ribbon{
+    display:inline-block;
+    background:var(--lilac-bg);
+    border:2.5px solid var(--lilac);
+    border-radius:10px;
+    padding:8px 26px;
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.9rem;
+    color:var(--lilac);
+    transform:rotate(-0.6deg);
+    margin-bottom:14px;
+  }
+  .dek{
+    max-width:660px;
+    margin:0 auto;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+  }
+  .dek u{ text-decoration-color: var(--blue); }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:18px;
+  }
+  @media (max-width:640px){
+    .grid{ grid-template-columns:1fr; }
+  }
+  .full{ grid-column:1 / -1; }
+
+  .box{
+    border-radius:14px;
+    padding:18px 20px 20px;
+    position:relative;
+  }
+  .box h2{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.6rem;
+    margin:0 0 10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .box p, .box li{
+    font-size:0.96rem;
+    color:var(--ink);
+  }
+  .box ul{
+    margin:6px 0 0;
+    padding-left:20px;
+  }
+  .box li{ margin-bottom:5px; }
+  .note{
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  mark{
+    background:none;
+    color:inherit;
+    border-bottom:2px solid currentColor;
+    padding:0 1px;
+  }
+
+  .b-lilac{ background:var(--lilac-bg); border:2px solid var(--lilac); } .b-lilac h2{color:var(--lilac);}
+  .b-blue{ background:var(--blue-bg); border:2px solid var(--blue); } .b-blue h2{color:var(--blue);}
+  .b-green{ background:var(--green-bg); border:2px solid var(--green); } .b-green h2{color:var(--green);}
+  .b-orange{ background:var(--orange-bg); border:2px solid var(--orange); } .b-orange h2{color:var(--orange);}
+  .b-pink{ background:var(--pink-bg); border:2px solid var(--pink); } .b-pink h2{color:var(--pink);}
+  .b-teal{ background:var(--teal-bg); border:2px solid var(--teal); } .b-teal h2{color:var(--teal);}
+  .b-rose{ background:var(--rose-bg); border:2px solid var(--rose); } .b-rose h2{color:var(--rose);}
+  .b-gold{ background:var(--gold-bg); border:2px solid var(--gold); } .b-gold h2{color:var(--gold);}
+
+  .fix{
+    display:inline-block;
+    background:var(--rose);
+    color:#fff;
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:0.9rem;
+    padding:1px 10px;
+    border-radius:20px;
+    transform:rotate(-2deg);
+    margin-left:6px;
+  }
+  .stf{
+    display:inline-block;
+    background:var(--blue);
+    color:#fff;
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:0.9rem;
+    padding:1px 10px;
+    border-radius:20px;
+    transform:rotate(-2deg);
+    margin-left:6px;
+  }
+
+  .arrow-row{
+    display:flex;
+    justify-content:center;
+    margin:-6px 0 10px;
+    color:var(--ink-soft);
+    font-size:1.3rem;
+  }
+
+  .split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:8px;
+  }
+  @media (max-width:520px){ .split{ grid-template-columns:1fr; } }
+  .split-col{
+    background:rgba(255,255,255,0.55);
+    border-radius:10px;
+    padding:10px 12px;
+  }
+  .split-col h3{
+    font-family:'Caveat', cursive;
+    font-size:1.2rem;
+    margin:0 0 4px;
+  }
+
+  /* three-column split for the three tipos de atos */
+  .split3{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:14px;
+    margin-top:8px;
+  }
+  @media (max-width:760px){ .split3{ grid-template-columns:1fr; } }
+  .split3-col{
+    background:rgba(255,255,255,0.6);
+    border-radius:10px;
+    padding:12px 14px;
+    border:1.5px dashed rgba(0,0,0,0.15);
+  }
+  .split3-col h3{
+    font-family:'Caveat', cursive;
+    font-size:1.3rem;
+    margin:0 0 4px;
+  }
+  .split3-col .tag{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    display:block;
+    margin-bottom:6px;
+  }
+  .split3-col ul{ margin:6px 0 0; padding-left:18px; }
+  .split3-col li{ font-size:0.9rem; margin-bottom:4px; }
+  .sanc{
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1.5px dashed rgba(0,0,0,0.15);
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+  .sanc b{ color:var(--ink); }
+
+  .strip{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin:26px 0;
+    text-align:center;
+  }
+  @media (max-width:640px){ .strip{ grid-template-columns:1fr 1fr; } }
+  .strip-item{
+    background:#fff;
+    border:2px dashed var(--ink-soft);
+    border-radius:12px;
+    padding:14px 10px;
+    font-size:0.9rem;
+  }
+  .strip-item b{ color:var(--rose); }
+
+  .strip-title{
+    text-align:center;
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.8rem;
+    color:var(--ink);
+    margin-top:8px;
+  }
+
+  footer{
+    border:2.5px dashed var(--ink);
+    border-radius:14px;
+    padding:18px 22px;
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:18px;
+    align-items:center;
+    background:#fff;
+  }
+  @media (max-width:600px){ footer{ grid-template-columns:1fr; } }
+  footer h3{
+    font-family:'Caveat', cursive;
+    font-size:1.4rem;
+    margin:0 0 4px;
+    color:var(--ink);
+  }
+  footer .law{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.5rem;
+    color:var(--blue);
+  }
+  footer .decree{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+  footer .summary p{ margin:4px 0 0; font-size:0.95rem; }
+
+  .badge-list{ list-style:none; padding:0; margin:6px 0 0; }
+  .badge-list li{
+    display:flex; gap:8px; align-items:flex-start; margin-bottom:6px;
+  }
+  .chk{ flex:0 0 auto; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <span class="kicker">— resumo atualizado (Lei 14.230/2021) —</span>
+    <h1>Lei nº 8.429/1992</h1>
+    <div class="ribbon">Lei de Improbidade Administrativa</div>
+    <p class="dek">Disciplina o sistema de responsabilização por <u>atos de improbidade administrativa</u>,
+      tutelando a probidade na organização do Estado e no exercício de suas funções, com base no
+      art. 37, §4º, da Constituição Federal.</p>
+  </header>
+
+  <div class="grid">
+    <div class="box b-lilac">
+      <h2>1. Objetivo</h2>
+      <p>Tutelar a <b>probidade</b> na organização do Estado e no exercício de suas funções, assegurando a
+      integridade do patrimônio público e social (art. 1º, caput).</p>
+      <p class="note">Não é mais só "combater a corrupção": a reforma de 2021 deixou o foco mais restrito, ligado à
+      proteção do patrimônio público e social.</p>
+    </div>
+
+    <div class="box b-blue">
+      <h2>2. Sujeitos</h2>
+      <div class="split">
+        <div class="split-col">
+          <h3>Ativo (art. 2º e 3º)</h3>
+          <p>Agente público (com ou sem vínculo, mandato, cargo, emprego ou função) e o <b>terceiro</b> que induza,
+          concorra ou se beneficie do ato, ainda que não seja agente público.</p>
+        </div>
+        <div class="split-col">
+          <h3>Passivo (art. 1º)</h3>
+          <p>Administração direta e indireta, empresa incorporada ao patrimônio público, ou entidade que receba
+          subvenção/incentivo/benefício do erário (proporcional ao aporte, se privada).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box b-rose full">
+      <h2>3. Dolo — o coração da reforma <span class="fix">2021</span></h2>
+      <ul>
+        <li>Só existe improbidade em conduta <b>dolosa</b> (art. 1º, §1º) — <b>acabou a modalidade culposa</b>,
+        que antes valia para o art. 10 (dano ao erário).</li>
+        <li>Dolo = <b>vontade livre e consciente</b> de alcançar o resultado ilícito tipificado nos arts. 9º, 10 e
+        11; não basta a mera voluntariedade do agente (art. 1º, §2º).</li>
+        <li>O <b>mero exercício da função</b>, sem prova de dolo com fim ilícito, afasta a responsabilidade
+        (art. 1º, §3º).</li>
+        <li>Aplicam-se ao sistema da improbidade os <b>princípios do direito administrativo sancionador</b>
+        (art. 1º, §4º).</li>
+      </ul>
+      <p class="note">Pegadinha clássica: erro grosseiro/negligência do agente não configura mais improbidade
+      por si só — precisa de dolo específico.</p>
+    </div>
+  </div>
+
+  <div class="arrow-row">↓ &nbsp; os três (quatro) tipos de atos ímprobos &nbsp; ↓</div>
+
+  <div class="grid">
+    <div class="box b-orange full">
+      <h2>4. Atos de improbidade — rol <mark>taxativo</mark></h2>
+      <p class="note">Após 2021, os róis dos arts. 9º, 10 e 11 passaram a ser interpretados como <b>taxativos</b>
+      (numerus clausus), com incisos exemplificativos apenas dentro de cada tipo — acabou a cláusula genérica de
+      "violação a princípios" isolada.</p>
+      <div class="split3">
+        <div class="split3-col">
+          <span class="tag">art. 9º</span>
+          <h3>Enriquecimento ilícito</h3>
+          <ul>
+            <li>Auferir vantagem patrimonial indevida em razão do cargo/função.</li>
+            <li>Ex.: receber propina, comissão, presente de quem tenha interesse em decisão do agente.</li>
+          </ul>
+          <div class="sanc">Bem <b>mais grave</b>: exige dolo de se enriquecer à custa do erário.</div>
+        </div>
+        <div class="split3-col">
+          <span class="tag">art. 10</span>
+          <h3>Dano ao erário</h3>
+          <ul>
+            <li>Ação/omissão <b>dolosa</b> que cause <b>perda patrimonial efetiva</b> aos cofres públicos.</li>
+            <li>Ex.: permitir uso indevido de bem público, frustrar licitude de concurso/licitação.</li>
+          </ul>
+          <div class="sanc">Exige <b>dano efetivo e dolo</b> — não basta risco ou dano presumido.</div>
+        </div>
+        <div class="split3-col">
+          <span class="tag">art. 11</span>
+          <h3>Violação a princípios</h3>
+          <ul>
+            <li>Condutas dolosas descritas <b>taxativamente</b> nos incisos (ex.: negar publicidade, praticar
+            nepotismo, revelar informação sigilosa).</li>
+            <li>Não há mais tipo "aberto" de violação genérica aos princípios.</li>
+          </ul>
+          <div class="sanc">Sanção mais branda dentre os três tipos.</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:10px;">Existe ainda o <b>art. 10-A</b> (incluído pela LC 157/2016): conceder
+      benefício financeiro/tributário sem cumprir requisitos legais (típico de guerra fiscal do ISS).</p>
+    </div>
+  </div>
+
+  <div class="arrow-row">↓ &nbsp; sanções na mesma proporção do tipo &nbsp; ↓</div>
+
+  <div class="grid">
+    <div class="box b-pink full">
+      <h2>5. Sanções (art. 12) <span class="fix">valores atualizados</span></h2>
+      <p class="note">Aplicadas isolada ou cumulativamente, conforme a gravidade do fato; o juiz considera a
+      extensão do dano e o proveito patrimonial obtido (art. 12, parágrafo único).</p>
+      <div class="split3">
+        <div class="split3-col">
+          <h3>Art. 9º — enriquecimento</h3>
+          <ul>
+            <li>Perda dos bens/valores acrescidos e da função pública.</li>
+            <li>Suspensão dos direitos políticos: <b>até 14 anos</b>.</li>
+            <li>Multa civil = <b>até o valor do acréscimo</b> patrimonial.</li>
+            <li>Proibição de contratar com o poder público: <b>até 14 anos</b>.</li>
+          </ul>
+        </div>
+        <div class="split3-col">
+          <h3>Art. 10 — dano ao erário</h3>
+          <ul>
+            <li>Ressarcimento integral, perda de bens (se houver acréscimo) e da função.</li>
+            <li>Suspensão dos direitos políticos: <b>5 a 8 anos</b>.</li>
+            <li>Multa civil = <b>até 2x</b> o valor do dano.</li>
+            <li>Proibição de contratar: <b>5 anos</b>.</li>
+          </ul>
+        </div>
+        <div class="split3-col">
+          <h3>Art. 11 — princípios</h3>
+          <ul>
+            <li>Ressarcimento se houver dano, perda da função.</li>
+            <li>Suspensão dos direitos políticos: <b>3 a 5 anos</b>.</li>
+            <li>Multa civil = <b>até 24x</b> a remuneração do agente.</li>
+            <li>Proibição de contratar: <b>3 anos</b>.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note" style="margin-top:10px;">Sanções são <b>independentes</b> das penais, civis e administrativas
+      comuns previstas em legislação específica (art. 12, caput).</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box b-teal">
+      <h2>6. Ação de improbidade</h2>
+      <ul>
+        <li>Rito: <b>procedimento comum</b> do CPC (art. 17, caput).</li>
+        <li>Legitimidade: em regra do <b>Ministério Público</b>; STF (ADIs 7042/7043) declarou
+        <b>inconstitucional</b> a exclusividade do MP, restaurando a legitimidade
+        <b>concorrente e disjuntiva</b> com a pessoa jurídica interessada <span class="stf">STF</span>.</li>
+        <li>É <b>vedada</b> a transação/acordo em regra — <b>exceto</b> o acordo de não persecução cível.</li>
+        <li>Indisponibilidade de bens pode ser decretada como tutela provisória, quando houver risco de dilapidação.</li>
+      </ul>
+    </div>
+
+    <div class="box b-gold">
+      <h2>7. Acordo de não persecução cível (ANPC)</h2>
+      <p>Reintroduzido/ampliado pela reforma de 2021 (arts. 17 e 17-B): permite compor com o investigado/réu,
+      mediante confissão e reparação do dano, entre outras condições.</p>
+      <ul>
+        <li>Celebrado pelo MP (e, após o STF, também pela PJ lesada) com aprovação do órgão competente.</li>
+        <li>Considera vantagens da colaboração e histórico de conduta do agente.</li>
+        <li>Não afasta o dever de ressarcir o dano.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box b-green full">
+      <h2>8. Prescrição (art. 23)</h2>
+      <ul>
+        <li>Prazo único: <b>8 anos</b>, contados da ocorrência do fato (ou, em infração permanente, do dia em que
+        cessou a permanência) — acabou a contagem antiga vinculada ao fim do mandato/cargo.</li>
+        <li>Instauração de inquérito civil ou PAD <b>suspende</b> o prazo por até <b>180 dias</b>.</li>
+        <li>Foi introduzida a <b>prescrição intercorrente</b> (§§4º a 8º): se o processo ficar parado além do
+        prazo entre marcos interruptivos, pode ser reconhecida de ofício.</li>
+        <li>Reconhecível de ofício pelo juiz, por ser matéria de ordem pública.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="strip-title">9. Pontos importantes para a prova</div>
+  <div class="strip">
+    <div class="strip-item">⚖️ Improbidade é <b>subjetiva</b>: exige dolo específico, não basta culpa.</div>
+    <div class="strip-item">📋 Rol dos arts. 9º, 10 e 11 é <b>taxativo</b>, não mais exemplificativo.</div>
+    <div class="strip-item">👥 Legitimidade para agir é <b>concorrente</b> entre MP e PJ interessada (pós-STF).</div>
+    <div class="strip-item">⏳ Prescrição unificada em <b>8 anos</b> do fato, com prescrição intercorrente.</div>
+  </div>
+
+  <footer>
+    <div>
+      <h3>Base legal</h3>
+      <div class="law">Lei nº 8.429/1992</div>
+      <div class="decree">Alterada pela Lei nº 14.230/2021 · fundamento no art. 37, §4º, CF/88</div>
+    </div>
+    <div class="summary">
+      <h3>Resumo em uma frase</h3>
+      <p>A Lei de Improbidade Administrativa responsabiliza, de forma <i>subjetiva e dolosa</i>, agentes públicos e
+      terceiros que pratiquem atos de enriquecimento ilícito (art. 9º), dano ao erário (art. 10) ou violação
+      a princípios (art. 11), sujeitando-os a sanções proporcionais como perda de função, suspensão de direitos
+      políticos, multa civil e proibição de contratar com o poder público, com prescrição em 8 anos.</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

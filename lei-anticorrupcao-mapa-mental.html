@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lei nº 12.846/2013 — Mapa de Estudo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF7EE;
+    --ink:#233248;
+    --ink-soft:#4A5568;
+    --lilac:#8E7CC3;
+    --lilac-bg:#EEE9F8;
+    --blue:#4C86A8;
+    --blue-bg:#E4F0F5;
+    --green:#5E9E6E;
+    --green-bg:#E7F3E8;
+    --orange:#D68A3C;
+    --orange-bg:#FBEDDA;
+    --pink:#C2588A;
+    --pink-bg:#FBE7F0;
+    --teal:#3F9C93;
+    --teal-bg:#E2F4F1;
+    --rose:#C0644B;
+    --rose-bg:#FAE6E0;
+    --gold:#B79126;
+    --gold-bg:#F8F1DA;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(35,50,72,0.06) 1px, transparent 0);
+    background-size:22px 22px;
+    color:var(--ink);
+    font-family:'Kalam', cursive;
+    line-height:1.5;
+  }
+
+  .sheet{
+    max-width:900px;
+    margin:0 auto;
+    padding:36px 28px 60px;
+  }
+
+  /* ===== Header ===== */
+  header{
+    text-align:center;
+    margin-bottom:30px;
+  }
+  .kicker{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--rose);
+    transform:rotate(-1deg);
+    display:inline-block;
+  }
+  h1{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:3.6rem;
+    margin:2px 0 6px;
+    color:var(--ink);
+    letter-spacing:1px;
+  }
+  .ribbon{
+    display:inline-block;
+    background:var(--lilac-bg);
+    border:2.5px solid var(--lilac);
+    border-radius:10px;
+    padding:8px 26px;
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.9rem;
+    color:var(--lilac);
+    transform:rotate(-0.6deg);
+    margin-bottom:14px;
+  }
+  .dek{
+    max-width:620px;
+    margin:0 auto;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+  }
+  .dek u{ text-decoration-color: var(--blue); }
+
+  /* ===== Section boxes ===== */
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:18px;
+  }
+  @media (max-width:640px){
+    .grid{ grid-template-columns:1fr; }
+  }
+  .full{ grid-column:1 / -1; }
+
+  .box{
+    border-radius:14px;
+    padding:18px 20px 20px;
+    position:relative;
+  }
+  .box h2{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.65rem;
+    margin:0 0 10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .box p, .box li{
+    font-size:0.98rem;
+    color:var(--ink);
+  }
+  .box ul{
+    margin:6px 0 0;
+    padding-left:20px;
+  }
+  .box li{ margin-bottom:5px; }
+  .note{
+    font-size:0.88rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  mark{
+    background:none;
+    color:inherit;
+    border-bottom:2px solid currentColor;
+    padding:0 1px;
+  }
+
+  .b-lilac{ background:var(--lilac-bg); border:2px solid var(--lilac); } .b-lilac h2{color:var(--lilac);}
+  .b-blue{ background:var(--blue-bg); border:2px solid var(--blue); } .b-blue h2{color:var(--blue);}
+  .b-green{ background:var(--green-bg); border:2px solid var(--green); } .b-green h2{color:var(--green);}
+  .b-orange{ background:var(--orange-bg); border:2px solid var(--orange); } .b-orange h2{color:var(--orange);}
+  .b-pink{ background:var(--pink-bg); border:2px solid var(--pink); } .b-pink h2{color:var(--pink);}
+  .b-teal{ background:var(--teal-bg); border:2px solid var(--teal); } .b-teal h2{color:var(--teal);}
+  .b-rose{ background:var(--rose-bg); border:2px solid var(--rose); } .b-rose h2{color:var(--rose);}
+  .b-gold{ background:var(--gold-bg); border:2px solid var(--gold); } .b-gold h2{color:var(--gold);}
+
+  /* fix/atenção tag */
+  .fix{
+    display:inline-block;
+    background:var(--rose);
+    color:#fff;
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:0.95rem;
+    padding:1px 10px;
+    border-radius:20px;
+    transform:rotate(-2deg);
+    margin-left:6px;
+  }
+
+  /* arrow connector */
+  .arrow-row{
+    display:flex;
+    justify-content:center;
+    margin:-6px 0 10px;
+    color:var(--ink-soft);
+    font-size:1.3rem;
+  }
+
+  /* two-column split inside a box for admin vs judicial */
+  .split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:8px;
+  }
+  @media (max-width:520px){ .split{ grid-template-columns:1fr; } }
+  .split-col{
+    background:rgba(255,255,255,0.55);
+    border-radius:10px;
+    padding:10px 12px;
+  }
+  .split-col h3{
+    font-family:'Caveat', cursive;
+    font-size:1.25rem;
+    margin:0 0 4px;
+  }
+
+  /* important points strip */
+  .strip{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin:26px 0;
+    text-align:center;
+  }
+  @media (max-width:640px){ .strip{ grid-template-columns:1fr 1fr; } }
+  .strip-item{
+    background:#fff;
+    border:2px dashed var(--ink-soft);
+    border-radius:12px;
+    padding:14px 10px;
+    font-size:0.92rem;
+  }
+  .strip-item b{ color:var(--rose); }
+
+  .strip-title{
+    text-align:center;
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.8rem;
+    color:var(--ink);
+    margin-top:8px;
+  }
+
+  /* footer summary */
+  footer{
+    border:2.5px dashed var(--ink);
+    border-radius:14px;
+    padding:18px 22px;
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:18px;
+    align-items:center;
+    background:#fff;
+  }
+  @media (max-width:600px){ footer{ grid-template-columns:1fr; } }
+  footer h3{
+    font-family:'Caveat', cursive;
+    font-size:1.4rem;
+    margin:0 0 4px;
+    color:var(--ink);
+  }
+  footer .law{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:1.5rem;
+    color:var(--blue);
+  }
+  footer .decree{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+  footer .summary p{ margin:4px 0 0; font-size:0.95rem; }
+
+  .badge-list{ list-style:none; padding:0; margin:6px 0 0; }
+  .badge-list li{
+    display:flex; gap:8px; align-items:flex-start; margin-bottom:6px;
+  }
+  .chk{ flex:0 0 auto; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <span class="kicker">— resumo atualizado —</span>
+    <h1>Lei nº 12.846/2013</h1>
+    <div class="ribbon">Lei Anticorrupção</div>
+    <p class="dek">Dispõe sobre a <u>responsabilização objetiva</u> administrativa e civil de pessoas jurídicas
+      pela prática de atos contra a administração pública, nacional ou estrangeira.</p>
+  </header>
+
+  <div class="grid">
+    <div class="box b-lilac">
+      <h2>1. Objetivo</h2>
+      <p>Combater a corrupção e promover a integridade nas relações público-privadas,
+      responsabilizando <b>objetivamente</b> as pessoas jurídicas por atos lesivos contra
+      a Administração Pública.</p>
+    </div>
+
+    <div class="box b-blue">
+      <h2>2. Quem se sujeita <span class="fix">completo</span></h2>
+      <ul>
+        <li>Sociedades <b>empresárias e simples</b>, fundações, associações — com ou sem fins lucrativos.</li>
+        <li>PJ <b>estrangeiras</b> com sede, filial ou representação no Brasil, ainda que <b>de forma temporária</b> (art. 1º, parágrafo único).</li>
+        <li>Aplica-se a atos contra a administração pública nacional ou estrangeira.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box b-orange full">
+      <h2>3. Atos lesivos (art. 5º) — exemplos</h2>
+      <ul class="badge-list">
+        <li><span class="chk">✅</span> Prometer, oferecer ou dar vantagem indevida a agente público.</li>
+        <li><span class="chk">✅</span> Financiar, custear ou patrocinar a prática de atos ilícitos.</li>
+        <li><span class="chk">✅</span> Fraudar licitação ou contrato administrativo.</li>
+        <li><span class="chk">✅</span> Dificultar atividade de investigação ou fiscalização.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box b-green full">
+      <h2>4. Responsabilização</h2>
+      <ul>
+        <li>Responsabilidade da PJ é <b>objetiva</b> — independe de culpa ou dolo.</li>
+        <li>Independe da responsabilização individual dos agentes públicos ou privados envolvidos; <b>não exclui</b> a responsabilidade penal das pessoas físicas.</li>
+        <li>Aplicável mesmo que o benefício seja <b>indireto</b>.</li>
+      </ul>
+      <div class="split">
+        <div class="split-col">
+          <h3>Fusão / incorporação (art. 4º)</h3>
+          <p>Responsabilidade <b>subsiste</b>, mas fica restrita ao pagamento de multa e reparação do dano, <b>limitada ao patrimônio transferido</b>.</p>
+        </div>
+        <div class="split-col">
+          <h3>Cisão / grupo econômico</h3>
+          <p>Cisão: sucessora <b>não responde</b>, salvo simulação. Controladoras, controladas, coligadas e consorciadas respondem <b>solidariamente</b> (só multa e reparação).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row">↓ &nbsp; sanções: onde cada uma mora &nbsp; ↓</div>
+
+  <div class="grid">
+    <div class="box b-pink full">
+      <h2>5. Sanções <span class="fix">corrigido</span></h2>
+      <div class="split">
+        <div class="split-col">
+          <h3>Administrativas (art. 6º)</h3>
+          <p>Aplicadas no PAR, isolada ou cumulativamente:</p>
+          <ul>
+            <li>Multa: <b>0,1% a 20%</b> do faturamento bruto do exercício anterior (nunca inferior à vantagem auferida).</li>
+            <li>Publicação extraordinária da decisão condenatória.</li>
+          </ul>
+        </div>
+        <div class="split-col">
+          <h3>Judiciais (art. 19)</h3>
+          <p>Só por ação ajuizada pelo MP ou Advocacia Pública:</p>
+          <ul>
+            <li>Perdimento de bens, direitos ou valores.</li>
+            <li>Suspensão ou interdição parcial das atividades.</li>
+            <li>Dissolução compulsória da PJ.</li>
+            <li>Proibição de receber incentivos/subsídios/doações públicas (1 a 5 anos).</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">"Advertência" não existe na lei — não confundir com outras leis administrativas.</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box b-teal">
+      <h2>6. Processo (PAR) — arts. 8º a 15</h2>
+      <ul>
+        <li>Instaurado e julgado pela <b>autoridade máxima</b> do órgão lesado (delegável, mas não subdelegável).</li>
+        <li>Conduzido por comissão de <b>ao menos 2 servidores estáveis</b>.</li>
+        <li>Prazo de <b>180 dias</b>, prorrogável.</li>
+        <li>CGU tem competência <b>concorrente</b> na esfera federal, podendo avocar o processo.</li>
+      </ul>
+    </div>
+
+    <div class="box b-gold">
+      <h2>7. Acordo de leniência <span class="fix">corrigido</span></h2>
+      <p>Previsto nos <b>arts. 16 e 17</b> (não 16 a 19). Firmado com a autoridade máxima do órgão. Requisitos: ser a primeira a se manifestar, cessar o envolvimento ilícito, admitir a infração e cooperar plenamente.</p>
+      <ul>
+        <li>Reduz em até <b>2/3</b> o valor da multa.</li>
+        <li>Isenta da publicação extraordinária e de parte das sanções judiciais.</li>
+        <li>Não isenta da obrigação de reparar o dano.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box b-blue">
+      <h2>8. Programas de integridade (art. 7º, VIII)</h2>
+      <p>Existência de <i>compliance</i> é considerada na dosimetria da sanção. Devem incluir:</p>
+      <ul>
+        <li>Comprometimento da alta direção.</li>
+        <li>Análise de riscos e códigos de ética.</li>
+        <li>Canal de denúncias, treinamentos e controles internos.</li>
+      </ul>
+    </div>
+
+    <div class="box b-rose">
+      <h2>9. Cadastros e prescrição</h2>
+      <ul>
+        <li><b>CEIS</b> — Cadastro Nacional de Empresas Inidôneas e Suspensas.</li>
+        <li><b>CNEP</b> — Cadastro Nacional de Empresas Punidas (art. 22-23).</li>
+        <li>Prescrição: <b>5 anos</b> da ciência do ato lesivo (ou do fim, se infração continuada).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="strip-title">10. Pontos importantes</div>
+  <div class="strip">
+    <div class="strip-item">🏛️ Foco na <b>pessoa jurídica</b>, e não na pessoa física.</div>
+    <div class="strip-item">⚖️ Responsabilidade <b>objetiva</b>: independe de culpa ou dolo.</div>
+    <div class="strip-item">📋 Administrativa ✕ judicial são <b>instâncias independentes</b> (art. 18).</div>
+    <div class="strip-item">🌍 Reflete padrões internacionais de combate à corrupção.</div>
+  </div>
+
+  <footer>
+    <div>
+      <h3>Base legal</h3>
+      <div class="law">Lei nº 12.846/2013</div>
+      <div class="decree">Decreto nº 8.420/2015 (regulamenta a Lei)</div>
+    </div>
+    <div class="summary">
+      <h3>Resumo em uma frase</h3>
+      <p>A Lei Anticorrupção responsabiliza <i>objetivamente</i> pessoas jurídicas que praticam ou se
+      beneficiam de atos de corrupção contra a Administração Pública, distinguindo sanções
+      <b>administrativas</b> (multa e publicação) das <b>judiciais</b> (perdimento, suspensão, dissolução,
+      proibição de incentivos), e incentivando a ética e a integridade.</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
